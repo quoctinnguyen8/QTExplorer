@@ -6,4 +6,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\qtexplorer\icon\" />
+    <Folder Include="wwwroot\upload\test1\level2\" />
+    <Folder Include="wwwroot\upload\test1\test1_1\NewFolder\" />
+    <Folder Include="wwwroot\upload\test2\level 2\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
 </Project>

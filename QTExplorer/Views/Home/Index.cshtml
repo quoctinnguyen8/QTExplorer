@@ -1,8 +1,50 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Trang chủ</title>
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link href="~/lib/qtexplorer/css/qtexplorer.min.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+
+	<div class="container">
+
+		<div x-data="qtexplorer" class="filemanager">
+			@*Thanh công cụ*@
+			<div class="fm-toolbox">
+				Thanh công cụ
+			</div>
+
+			@*Cây thư mục*@
+			<div class="fm-folder-tree">
+				<ul>
+					<template x-for="f in _folderTree">
+						<li x-text="f.folderName" :class="f.cssClass"></li>
+					</template>
+				</ul>
+			</div>
+
+			@*Hiển thị file và thư mục*@
+			<div class="fm-main-panel">
+
+			</div>
+
+			@*Thông tin bổ sung*@
+			<div class="fm-additional-info">
+				Thông tin bổ sung
+			</div>
+
+		</div>
+
+	</div>
+
+	<script defer src="~/lib/alpinejs/cdn.min.js"></script>
+	<script src="~/lib/qtexplorer/js/qtexplorer.js" asp-append-version="true"></script>
+</body>
+</html>
